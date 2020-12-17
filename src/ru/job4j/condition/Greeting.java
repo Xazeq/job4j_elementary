@@ -9,5 +9,6 @@ public class Greeting {
         String separate = " ";
         idea = idea + separate + year;
         System.out.println(idea);
+
     }
 }
