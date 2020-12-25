@@ -2,7 +2,7 @@ package ru.job4j.loop;
 
 public class Cryptography {
     public static String code(String s) {
-        if (s == "") {
+        if (s.equals("")) {
             return "empty";
         }
         if (s.length() > 0 && s.length() <= 4) {
