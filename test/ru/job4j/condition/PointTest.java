@@ -2,10 +2,51 @@ package ru.job4j.condition;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+import static org.hamcrest.Matchers.closeTo;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.*;
 
 public class PointTest {
+
+    @Test
+    public void when00To02Then2() {
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        double result = a.distance(b);
+        assertThat(result, closeTo(2, 0.001));
+    }
+
+    @Test
+    public void when13To56Then5() {
+        Point a = new Point(1, 3);
+        Point b = new Point(5, 6);
+        double result = a.distance(b);
+        assertThat(result, closeTo(5, 0.001));
+    }
+
+    @Test
+    public void when000To333Then5() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(3, 3, 3);
+        double result = a.distance3d(b);
+        assertThat(result, closeTo(5.196, 0.001));
+    }
+
+    @Test
+    public void when333To777Then6() {
+        Point a = new Point(3, 3, 3);
+        Point b = new Point(7, 7, 7);
+        double result = a.distance3d(b);
+        assertThat(result, closeTo(6.928, 0.001));
+    }
+
+    @Test
+    public void when999To111Then13() {
+        Point a = new Point(9, 9, 9);
+        Point b = new Point(1, 1, 1);
+        double result = a.distance3d(b);
+        assertThat(result, closeTo(13.856, 0.001));
+    }
 
     /*@Test
     public void when00to20then2() {
